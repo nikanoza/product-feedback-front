@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body{
+  height: 100%;
+}
+
+@layer components{
+  .jost-b-h1{
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: -0.33px;
+  }
+  .jost-b-h2{
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.25px;
+  }
+  .jost-b-h3{
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+  }
+  .jost-b-h4{
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+  }
+  .jost-r-h1{
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .jost-r-h2{
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .jost-r-h3{
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+  }
+}
