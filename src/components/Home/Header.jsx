@@ -27,7 +27,15 @@ const Header = (props) => {
       ) : (
         <Hamburger onClick={openMenu} />
       )}
-      {menuStatus && <Menu backdropRef={backdropRef} onClick={checkHandler} />}
+      {menuStatus && (
+        <div
+          className='w-full h-149 absolute top-18 -left-6 bg-black bg-opacity-50'
+          ref={backdropRef}
+          onClick={checkHandler}
+        >
+          <Menu />
+        </div>
+      )}
     </header>
   );
 };
