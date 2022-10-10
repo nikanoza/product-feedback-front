@@ -1,3 +1,4 @@
+import { Hamburger } from 'svg';
 import Menu from './Menu';
 
 const Header = () => {
@@ -7,11 +8,7 @@ const Header = () => {
         <h3 className='jost-b-h4'>Frontend Mentor</h3>
         <h2 className='jost-r-h3 opacity-75'>Feedback Board</h2>
       </div>
-      <div id='hamburger-menu' className='space-y-1'>
-        <span className='block w-5 h-1 bg-white'></span>
-        <span className='block w-5 h-1 bg-white'></span>
-        <span className='block w-5 h-1 bg-white'></span>
-      </div>
+      <Hamburger />
       <Menu />
     </header>
   );
