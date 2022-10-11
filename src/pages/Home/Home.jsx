@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const Home = () => {
   const [filterBy, setFilterBy] = useState('Most Upvotes');
-  console.log(filterBy);
+
   return (
     <div className='w-full h-full md:pt-14 bg-extraLightGray lg:flex lg:px-10 lg:pt-24 lg:gap-x-8 xl:px-40'>
       <Header />

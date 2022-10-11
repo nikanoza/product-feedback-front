@@ -1,7 +1,15 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchStatuses } from 'store';
 
 const RoadmapPanel = () => {
-  const statuses = ['Planned', 'in-progress', 'live'];
+  const statuses = useSelector((state) => state.statuses.items);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchStatuses());
+  }, [dispatch]);
   return (
     <div
       id='roadmap-panel'
@@ -19,10 +27,13 @@ const RoadmapPanel = () => {
           </Link>
         </div>
         <div id='roadmap-statistics' className='mt-6 flex flex-col gap-y-2'>
-          {statuses.map((status) => (
-            <div className='w-full flex items-center' key={status}>
-              <span className='w-2 h-2 rounded-full bg-electric'></span>
-              <span className='jost-r-h1 text-gray ml-4'>{status}</span>
+          {statuses.slice(1).map((status) => (
+            <div className='w-full flex items-center' key={status.id}>
+              <span
+                className={`w-2 h-2 rounded-full`}
+                style={{ backgroundColor: status.color }}
+              ></span>
+              <span className='jost-r-h1 text-gray ml-4'>{status.name}</span>
               <span className='jost-b-h3 text-gray ml-auto'>3</span>
             </div>
           ))}
