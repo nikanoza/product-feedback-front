@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { Button } from 'components';
+import { Link } from 'react-router-dom';
 import Select from 'react-select';
 
 const options = [
@@ -27,36 +28,63 @@ const customStyles = {
     color: state.isSelected ? '#AD1FEA' : '#647196',
     backgroundColor: state.isSelected ? 'rgba(58, 67, 116, 0.15)' : '#ffffff',
   }),
-  control: (styles) => ({
-    ...styles,
+  control: () => ({
     backgroundColor: 'transparent',
     display: 'flex',
     color: 'white',
     border: 'none',
   }),
+  indicatorSeparator: () => ({ display: 'none' }),
+  dropdownIndicator: (styles) => ({ ...styles, color: '#FFFFFF' }),
   singleValue: (provided, state) => {
     const opacity = state.isDisabled ? 0.5 : 1;
+    const color = 'white';
+    const fontFamily = ['Jost', 'sans-serif'];
+    const fontWeight = 700;
+    const fontSize = '13px';
+    const lineHeight = '18.79px';
+    const letterSpacing = '-0.2px';
     const transition = 'opacity 300ms';
 
-    return { ...provided, opacity, transition };
+    return {
+      ...provided,
+      opacity,
+      transition,
+      color,
+      fontFamily,
+      fontWeight,
+      fontSize,
+      lineHeight,
+      letterSpacing,
+    };
   },
 };
 
-const FilterHeader = () => {
-  const [filterBy, setFilterBy] = useState('Most-Upvotes');
+const FilterHeader = (props) => {
   return (
-    <div className='w-full h-14 bg-darkBlue flex px-6 py-8 items-center'>
+    <div className='w-full h-14 bg-darkBlue flex px-4 py-8 items-center'>
       <div id='sort-box' className='flex items-center'>
-        <span className='jost-r-3 text-white mr-2'>sort by :</span>
+        <span className='jost-r-h3 text-white'>sort by :</span>
         <Select
           defaultValue={{
             value: 'Most Upvotes',
-            label: <div className='text-white jost-b-'>Most Upvotes</div>,
+            label: (
+              <div className='text-white jost-b-h4 border-none'>
+                Most Upvotes
+              </div>
+            ),
           }}
-          onChange={setFilterBy}
+          onChange={(option) => props.setFilterBy(option.value)}
           options={options}
           styles={customStyles}
         />
+        <Link
+          className='px-4 py-3 text-white jost-b-h4 bg-violet hover:bg-violetHover whitespace-nowrap rounded-cardBorderRadius ml-auto'
+          id='add-feedback-btn'
+          to={'/feedbacks/new'}
+        >
+          + Add Feedback
+        </Link>
       </div>
     </div>
   );
