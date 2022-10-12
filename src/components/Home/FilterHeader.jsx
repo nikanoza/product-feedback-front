@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Select from 'react-select';
 import { Suggestions } from '.';
 
@@ -6,7 +6,6 @@ const options = [
   {
     value: 'Most Upvotes',
     label: 'Most Upvotes',
-    className: 'bg-red-500',
   },
   {
     value: 'Least Upvotes',
@@ -61,6 +60,7 @@ const customStyles = {
 };
 
 const FilterHeader = (props) => {
+  const location = useLocation();
   return (
     <div className='w-full h-14 bg-darkBlue flex px-4 py-8 items-center md:mt-10 md:rounded-cardBorderRadius lg:mt-0'>
       <div id='sort-box' className='flex items-center'>
@@ -84,6 +84,7 @@ const FilterHeader = (props) => {
         className='px-4 py-3 text-white jost-b-h4 bg-violet hover:bg-violetHover whitespace-nowrap rounded-cardBorderRadius ml-auto'
         id='add-feedback-btn'
         to={'/feedbacks/new'}
+        state={{ from: location }}
       >
         + Add Feedback
       </Link>

@@ -1,7 +1,15 @@
 import { Button } from 'components';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCategories } from 'store';
 
 const ButtonsControl = () => {
-  const buttons = ['UI', 'UX', 'Enhancement', 'Bug', 'Feature'];
+  const categories = useSelector((state) => state.category.items);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
   return (
     <div
       id='buttons-panel'
@@ -13,13 +21,15 @@ const ButtonsControl = () => {
       >
         All
       </Button>
-      {buttons.map((button) => (
+      {categories.map((category) => (
         <Button
-          key={button}
-          id={'btn-' + button}
-          className='py-1 px-4 bg-lightGray rounded-cardBorderRadius text-electric jost-b-h4 md:py-0 md:h-7'
+          key={category.id}
+          id={'btn-' + category.id}
+          className={`py-1 px-4 bg-lightGray rounded-cardBorderRadius text-electric jost-b-h4 md:py-0 md:h-7 ${
+            category.name.length < 3 ? 'uppercase' : 'capitalize'
+          }`}
         >
-          {button}
+          {category.name}
         </Button>
       ))}
     </div>
