@@ -7,7 +7,11 @@ const initialState = {
 const feedbacksSlice = createSlice({
   name: 'feedbacks',
   initialState,
-  reducers: {},
+  reducers: {
+    fetchFeedback: (state, action) => {
+      state.items = action.payload;
+    },
+  },
 });
 
 export const feedbacksReducer = feedbacksSlice.reducer;
