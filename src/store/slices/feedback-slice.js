@@ -11,6 +11,11 @@ const feedbacksSlice = createSlice({
     fetchFeedback: (state, action) => {
       state.items = action.payload;
     },
+    addFeedback: (state, action) => {
+      const feedbacks = state.items.slice();
+      feedbacks.push(action.payload);
+      state.items = feedbacks;
+    },
   },
 });
 

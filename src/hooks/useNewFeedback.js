@@ -1,9 +1,15 @@
 import { useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { addFeedback } from 'services';
+
+import { feedbacksActions } from 'store';
 
 const useNewFeedback = () => {
   const categories = useSelector((state) => state.category.items);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -28,7 +34,9 @@ const useNewFeedback = () => {
       category_id: category.id,
     };
     try {
-      await addFeedback(sendObj);
+      const response = await addFeedback(sendObj);
+      dispatch(feedbacksActions.addFeedback(response.data));
+      navigate('/');
     } catch (error) {}
   };
   const titleValidation = {
