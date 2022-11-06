@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { ArrowUp, CommentsIcon } from 'svg';
 
 const FeedbackComponent = (props) => {
@@ -6,6 +7,11 @@ const FeedbackComponent = (props) => {
   const category = categories.find(
     (item) => item.id === props.feedback.category_id
   );
+  const navigate = useNavigate();
+
+  const navigateFeedback = () => {
+    navigate('/feedbacks/' + props.feedback.id);
+  };
 
   const voteBox = (
     <div
@@ -20,7 +26,11 @@ const FeedbackComponent = (props) => {
   );
 
   const commentsBox = (
-    <div id='comment-box' className='flex items-center gap-x-1 cursor-pointer'>
+    <div
+      id='comment-box'
+      className='flex items-center gap-x-1 cursor-pointer'
+      onClick={navigateFeedback}
+    >
       <CommentsIcon />
       <span className='text-darkBlueTwo jost-b-h4'>
         {props.feedback.commentAmount}
