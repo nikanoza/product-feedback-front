@@ -64,7 +64,7 @@ const FilterHeader = (props) => {
   return (
     <div className='w-full h-14 bg-darkBlue flex px-4 py-8 items-center md:mt-10 md:rounded-cardBorderRadius lg:mt-0'>
       <div id='sort-box' className='flex items-center'>
-        <Suggestions />
+        <Suggestions suggestions={props.suggestions} />
         <span className='jost-r-h3 text-white md:jost-r-h2'>sort by :</span>
         <Select
           defaultValue={{

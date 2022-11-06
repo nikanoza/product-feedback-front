@@ -20,9 +20,11 @@ const FeedbackComponent = (props) => {
   );
 
   const commentsBox = (
-    <div id='comment-box' className='flex items-center gap-x-1'>
+    <div id='comment-box' className='flex items-center gap-x-1 cursor-pointer'>
       <CommentsIcon />
-      <span className='text-darkBlueTwo jost-b-h4'>2</span>
+      <span className='text-darkBlueTwo jost-b-h4'>
+        {props.feedback.commentAmount}
+      </span>
     </div>
   );
 
