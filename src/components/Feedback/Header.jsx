@@ -8,7 +8,7 @@ const Header = () => {
     navigate('/');
   };
   return (
-    <div className='w-full flex justify-between items-center'>
+    <div className='w-full flex justify-between items-center mb-6'>
       <Link to={'/'} className='flex gap-x-4 items-center'>
         <ArrowLeft color='#4661E6' />
         <span className='jost-b-h4 text-gray'>Go Back</span>
