@@ -1,5 +1,5 @@
 import { FeedbackComponent } from 'components';
-import { Comment, Header } from 'components/Feedback';
+import { Comment, Header, NewComment } from 'components/Feedback';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
@@ -35,6 +35,7 @@ const Feedback = () => {
           ))}
         </div>
       ) : null}
+      <NewComment feedbackId={id} />
     </div>
   );
 };
