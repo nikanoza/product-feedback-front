@@ -49,7 +49,7 @@ const FeedbackComponent = (props) => {
           {props.feedback.description}
         </p>
         <div className='py-1 px-4 bg-lightGray rounded-cardBorderRadius text-electric jost-b-h4 mt-2 w-fit md:mt-3 md:jost-b-h3'>
-          {category.name}
+          {categories.length > 0 ? category.name : null}
         </div>
       </div>
       <div className='w-full mt-4 flex justify-between items-center md:hidden'>

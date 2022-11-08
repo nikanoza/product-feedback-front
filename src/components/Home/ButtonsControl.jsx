@@ -21,17 +21,19 @@ const ButtonsControl = () => {
       >
         All
       </Button>
-      {categories.map((category) => (
-        <Button
-          key={category.id}
-          id={'btn-' + category.id}
-          className={`py-1 px-4 bg-lightGray rounded-cardBorderRadius text-electric jost-b-h4 md:py-0 md:h-7 ${
-            category.name.length < 3 ? 'uppercase' : 'capitalize'
-          }`}
-        >
-          {category.name}
-        </Button>
-      ))}
+      {categories.length > 0
+        ? categories.map((category) => (
+            <Button
+              key={category.id}
+              id={'btn-' + category.id}
+              className={`py-1 px-4 bg-lightGray rounded-cardBorderRadius text-electric jost-b-h4 md:py-0 md:h-7 ${
+                category.name.length < 3 ? 'uppercase' : 'capitalize'
+              }`}
+            >
+              {category.name}
+            </Button>
+          ))
+        : null}
     </div>
   );
 };
