@@ -15,3 +15,7 @@ export const getSingleFeedback = (id) => {
 export const addComment = (data) => {
   return axios.post('/comment', data);
 };
+
+export const addReplay = (data) => {
+  return axios.post('/replay', data);
+};

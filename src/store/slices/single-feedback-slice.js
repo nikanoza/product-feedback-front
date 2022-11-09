@@ -23,6 +23,14 @@ const singleFeedbackSlice = createSlice({
       clone.comments.push(action.payload);
       state.feedback = clone;
     },
+    addReplay: (state, action) => {
+      const clone = state.feedback;
+      const commentIndex = clone.comments.findIndex(
+        (comment) => comment.id === action.payload.commentId
+      );
+      clone.comments[commentIndex].replies.push(action.payload);
+      state.feedback = clone;
+    },
   },
 });
 

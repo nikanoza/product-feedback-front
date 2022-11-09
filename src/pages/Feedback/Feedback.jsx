@@ -22,20 +22,22 @@ const Feedback = () => {
     dispatch(fetchSingleFeedback(id));
   }, [dispatch, id]);
   return (
-    <div className='w-full min-h-full bg-extraLightGray p-6 pb-20'>
-      <Header />
-      {feedback.id ? <FeedbackComponent feedback={feedback} /> : null}
-      {feedback.id ? (
-        <div className='w-full p-6 bg-white mt-6 rounded-cardBorderRadius'>
-          <span className='text-darkBlueTwo jost-b-h3'>
-            {feedback.commentAmount} Comments
-          </span>
-          {feedback.comments.map((comment, index) => (
-            <Comment key={comment.id} index={index} />
-          ))}
-        </div>
-      ) : null}
-      <NewComment feedbackId={id} />
+    <div className='w-full min-h-full bg-extraLightGray p-6 pb-20 lg:flex lg:justify-center md:p-10 md:pt-14 md:pb-28 lg:pt-20 lg:pb-32'>
+      <div className='w-full lg:max-w-3xl'>
+        <Header />
+        {feedback.id ? <FeedbackComponent feedback={feedback} /> : null}
+        {feedback.id ? (
+          <div className='w-full p-6 bg-white mt-6 rounded-cardBorderRadius'>
+            <span className='text-darkBlueTwo jost-b-h3'>
+              {feedback.commentAmount} Comments
+            </span>
+            {feedback.comments.map((comment, index) => (
+              <Comment key={comment.id} index={index} />
+            ))}
+          </div>
+        ) : null}
+        <NewComment feedbackId={id} />
+      </div>
     </div>
   );
 };
