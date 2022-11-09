@@ -18,6 +18,11 @@ const singleFeedbackSlice = createSlice({
     fetchFeedback: (state, action) => {
       state.feedback = action.payload;
     },
+    addComment: (state, action) => {
+      const clone = state.feedback;
+      clone.comments.push(action.payload);
+      state.feedback = clone;
+    },
   },
 });
 

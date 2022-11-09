@@ -1,15 +1,19 @@
 import { Button } from 'components/shared';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Replay } from '.';
+import { Replay, ReplayForm } from '.';
 
 const Comment = (props) => {
+  const [replayForm, setReplayForm] = useState(false);
   const comments = useSelector(
     (state) => state.singleFeedback.feedback.comments
   );
   const users = useSelector((state) => state.users.users);
   const comment = comments[props.index];
   const user = users.find((human) => human.id === comment.userId);
-  const onReplay = () => {};
+  const onReplay = () => {
+    setReplayForm(!replayForm);
+  };
 
   return (
     <div className='w-full mt-6'>
@@ -33,6 +37,7 @@ const Comment = (props) => {
         </Button>
       </div>
       <p className='w-full text-gray jost-r-h3 mt-6'>{comment.content}</p>
+      {replayForm ? <ReplayForm commentId={comment.id} /> : null}
       {comment.replies.length > 0 ? (
         <div className='w-full border-l-gray border-l-[1px] border-opacity-10 pl-6 mt-6 flex flex-col gap-y-6'>
           {comment.replies.map((replay) => (

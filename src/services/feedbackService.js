@@ -11,3 +11,7 @@ export const addFeedback = (data) => {
 export const getSingleFeedback = (id) => {
   return axios.get('/feedbacks/' + id);
 };
+
+export const addComment = (data) => {
+  return axios.post('/comment', data);
+};
