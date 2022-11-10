@@ -1,11 +1,12 @@
 import { Button } from 'components/shared';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft } from 'svg';
 
 const Header = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
   const backMain = () => {
-    navigate('/');
+    navigate('/feedbacks-edit/' + id);
   };
   return (
     <div className='w-full flex justify-between items-center mb-6'>

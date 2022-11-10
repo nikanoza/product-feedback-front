@@ -40,7 +40,7 @@ const Replay = (props) => {
         </div>
         <p className='w-full text-gray jost-r-h3 mt-6 md:ml-4'>
           <span className=' text-violet'>@{props.replay.replyingTo}</span>
-          {props.replay.content}
+          {' ' + props.replay.content}
         </p>
         {replayForm ? (
           <ReplayForm
