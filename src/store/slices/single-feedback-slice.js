@@ -21,6 +21,7 @@ const singleFeedbackSlice = createSlice({
     addComment: (state, action) => {
       const clone = state.feedback;
       clone.comments.push(action.payload);
+      clone.commentAmount = clone.commentAmount + 1;
       state.feedback = clone;
     },
     addReplay: (state, action) => {
@@ -29,6 +30,7 @@ const singleFeedbackSlice = createSlice({
         (comment) => comment.id === action.payload.commentId
       );
       clone.comments[commentIndex].replies.push(action.payload);
+      clone.commentAmount = clone.commentAmount + 1;
       state.feedback = clone;
     },
   },
