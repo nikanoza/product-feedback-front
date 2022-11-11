@@ -19,3 +19,11 @@ export const addComment = (data) => {
 export const addReplay = (data) => {
   return axios.post('/replay', data);
 };
+
+export const editFeedback = (data) => {
+  return axios.put('/feedback', data);
+};
+
+export const deleteFeedback = (id) => {
+  return axios.delete('/feedbacks/' + id);
+};

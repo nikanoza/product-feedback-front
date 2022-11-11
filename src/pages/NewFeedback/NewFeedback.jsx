@@ -1,7 +1,7 @@
 import { Button, Input, Textarea } from 'components';
 import { CategorySelect } from 'components/NewFeedback';
 import { useNewFeedback } from 'hooks';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, NewIcon } from 'svg';
 import { Plus } from 'svg';
 
@@ -15,6 +15,13 @@ const NewFeedback = () => {
     descriptionValidation,
     setValue,
   } = useNewFeedback();
+
+  const navigate = useNavigate();
+
+  const backMain = () => {
+    navigate('/');
+  };
+
   return (
     <div className='w-full h-full bg-extraLightGray pt-9 px-6 pb-18 md:px-28 md:pt-14 md:pb-56 xl:px-0 lg:flex lg:justify-center'>
       <div id='wrapper' className='w-full xl:w-2/5'>
@@ -110,6 +117,7 @@ const NewFeedback = () => {
             <Button
               id='cancel-btn'
               type='button'
+              onClick={backMain}
               className='w-full h-10 md:h-11 md:w-24 text-white jost-b-h4 bg-darkBlueTwo hover:bg-darkBlueTwoHover mt-4 md:mt-0 rounded-cardBorderRadius'
             >
               Cancel
