@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         violet: '#AD1FEA',
         electric: '#4661E6',
+        electricHover: '#7C91F9',
         darkBlue: '#373F68',
         lightGray: '#F2F4FF',
         extraLightGray: '#F7F8FD',

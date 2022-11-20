@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { fetchCategories } from 'store';
 import { ArrowUp, CommentsIcon } from 'svg';
 
@@ -10,10 +10,11 @@ const Feedback = (props) => {
     (item) => item.id === props.feedback.category_id
   );
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
 
   const navigateFeedback = () => {
-    navigate('/feedbacks/' + props.feedback.id);
+    navigate('/feedbacks/' + props.feedback.id, { state: { from: location } });
   };
 
   useEffect(() => {

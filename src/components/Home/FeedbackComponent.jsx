@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { ArrowUp, CommentsIcon } from 'svg';
 
 const FeedbackComponent = (props) => {
@@ -8,9 +8,10 @@ const FeedbackComponent = (props) => {
     (item) => item.id === props.feedback.category_id
   );
   const navigate = useNavigate();
+  const location = useLocation();
 
   const navigateFeedback = () => {
-    navigate('/feedbacks/' + props.feedback.id);
+    navigate('/feedbacks/' + props.feedback.id, { state: { from: location } });
   };
 
   const voteBox = (

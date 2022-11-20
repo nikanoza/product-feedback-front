@@ -41,7 +41,7 @@ const ReplayForm = (props) => {
         value={replayContent}
       ></textarea>
       <Button
-        className='px-4 py-3 bg-violet text-white jost-b-h4 rounded-cardBorderRadius mt-2 md:px-0 md:h-11 md:w-28'
+        className='px-4 py-3 bg-violet hover:bg-violetHover text-white jost-b-h4 rounded-cardBorderRadius mt-2 md:px-0 md:h-11 md:w-28'
         type='button'
         onClick={onAddReplay}
       >

@@ -36,7 +36,7 @@ const Comment = (props) => {
               <Button
                 id={'replay-btn' + comment.id}
                 type='button'
-                className='text-electric jost-b-h4 ml-auto'
+                className='text-electric hover:underline jost-b-h4 ml-auto'
                 onClick={onReplay}
               >
                 Replay

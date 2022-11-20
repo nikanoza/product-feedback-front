@@ -56,7 +56,7 @@ const NewComment = (props) => {
         </span>
         <Button
           id='post-comment-btn'
-          className='px-4 py-3 bg-violet text-white jost-b-h4 rounded-cardBorderRadius'
+          className='px-4 py-3 bg-violet hover:bg-violetHover text-white jost-b-h4 rounded-cardBorderRadius'
           type='button'
           onClick={onAddComment}
         >
