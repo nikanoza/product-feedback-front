@@ -27,7 +27,7 @@ const Home = () => {
     dispatch(fetchFeedbacks());
   }, [dispatch]);
   return (
-    <div className='w-full min-h-full pb-18 md:pt-14 bg-extraLightGray lg:flex lg:px-10 lg:pt-24 lg:gap-x-8 xl:px-40'>
+    <div className='w-full h-full pb-18 md:pt-14 bg-extraLightGray lg:flex lg:px-10 lg:pt-24 lg:gap-x-8 xl:px-40'>
       <Header />
       <div className='lg:w-full'>
         <div className='w-full p-0 md:px-10 lg:px-0'>
