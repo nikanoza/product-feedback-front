@@ -1,5 +1,3 @@
-![This is header image](/public/favicon.png)
-
 # Product feedback app
 
 ### Table of Contents
