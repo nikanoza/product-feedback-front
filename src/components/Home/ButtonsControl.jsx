@@ -27,7 +27,7 @@ const ButtonsControl = (props) => {
         All
       </Button>
       {categories.length > 0
-        ? categories.map((category) => (
+        ? categories.slice().map((category) => (
             <Button
               key={category.id}
               id={'btn-' + category.id}
