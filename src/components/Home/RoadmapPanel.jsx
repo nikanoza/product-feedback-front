@@ -28,21 +28,29 @@ const RoadmapPanel = () => {
           </Link>
         </div>
         <div id='roadmap-statistics' className='mt-6 flex flex-col gap-y-2'>
-          {statuses.slice(1).map((status) => {
-            const amount = feedbacks
-              .slice()
-              .filter((feedback) => feedback.status_id === status.id).length;
-            return (
-              <div className='w-full flex items-center' key={status.id}>
-                <span
-                  className={`w-2 h-2 rounded-full`}
-                  style={{ backgroundColor: status.color }}
-                ></span>
-                <span className='jost-r-h1 text-gray ml-4'>{status.name}</span>
-                <span className='jost-b-h3 text-gray ml-auto'>{amount}</span>
-              </div>
-            );
-          })}
+          {statuses.length > 0
+            ? statuses.slice(1).map((status) => {
+                const amount = feedbacks
+                  .slice()
+                  .filter(
+                    (feedback) => feedback.status_id === status.id
+                  ).length;
+                return (
+                  <div className='w-full flex items-center' key={status.id}>
+                    <span
+                      className={`w-2 h-2 rounded-full`}
+                      style={{ backgroundColor: status.color }}
+                    ></span>
+                    <span className='jost-r-h1 text-gray ml-4'>
+                      {status.name}
+                    </span>
+                    <span className='jost-b-h3 text-gray ml-auto'>
+                      {amount}
+                    </span>
+                  </div>
+                );
+              })
+            : null}
         </div>
       </div>
     </div>
