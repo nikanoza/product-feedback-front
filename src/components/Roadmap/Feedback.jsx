@@ -26,7 +26,7 @@ const Feedback = (props) => {
   const voteBox = (
     <div
       id='vote-box'
-      className='bg-lightGray flex py-2 px-4 rounded-cardBorderRadius items-center gap-x-2'
+      className='bg-lightGray hover:bg-boxGray flex py-2 px-4 rounded-cardBorderRadius items-center gap-x-2'
     >
       <ArrowUp />
       <span className='text-darkBlueTwo jost-b-h4'>
@@ -49,32 +49,35 @@ const Feedback = (props) => {
   );
 
   return (
-    <div
-      className='rounded-cardBorderRadius bg-white border-t-[6px] p-6 pt-4 mt-4'
-      style={{ borderTopColor: props.status.color }}
-    >
+    <div className='rounded-cardBorderRadius bg-white mt-4'>
       {categories.length > 0 ? (
         <>
-          <div className='flex items-center gap-x-2'>
-            <span
-              className='w-2 h-2 rounded-full'
-              style={{ backgroundColor: props.status.color }}
-            ></span>
-            <span className='jost-r-h3 text-gray'>{props.status.name}</span>
+          <div
+            className='w-full h-[6px] rounded-t-cardBorderRadius'
+            style={{ backgroundColor: props.status.color }}
+          ></div>
+          <div className='w-full p-6 pt-0'>
+            <div className='flex items-center gap-x-2 mt-6'>
+              <span
+                className='w-2 h-2 rounded-full'
+                style={{ backgroundColor: props.status.color }}
+              ></span>
+              <span className='jost-r-h3 text-gray'>{props.status.name}</span>
+            </div>
+            <h3 className='mt-4 jost-b-h4 text-darkBlueTwo hover:text-electric'>
+              {props.feedback.title}
+            </h3>
+            <p className='mt-2 jost-r-h3 text-gray'>
+              {props.feedback.description}
+            </p>
+            <div className='py-1 px-4 bg-lightGray rounded-cardBorderRadius text-electric jost-b-h4 mt-2 w-fit md:mt-3 md:jost-b-h3'>
+              {category.name}
+            </div>
+            <div className='w-full mt-4 flex justify-between items-center'>
+              {voteBox}
+              {commentsBox}
+            </div>
           </div>
-          <h3 className='mt-4 jost-b-h4 text-darkBlueTwo'>
-            {props.feedback.title}
-          </h3>
-          <p className='mt-2 jost-r-h3 text-gray'>
-            {props.feedback.description}
-          </p>
-          <div className='py-1 px-4 bg-lightGray rounded-cardBorderRadius text-electric jost-b-h4 mt-2 w-fit md:mt-3 md:jost-b-h3'>
-            {category.name}
-          </div>
-          <div className='w-full mt-4 flex justify-between items-center'>
-            {voteBox}
-            {commentsBox}
-          </div>{' '}
         </>
       ) : null}
     </div>

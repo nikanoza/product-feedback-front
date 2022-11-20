@@ -1,7 +1,7 @@
 import { Button, Input, Textarea } from 'components';
 import { CategorySelect } from 'components/NewFeedback';
 import { useNewFeedback } from 'hooks';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, NewIcon } from 'svg';
 import { Plus } from 'svg';
 
@@ -17,15 +17,19 @@ const NewFeedback = () => {
   } = useNewFeedback();
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const backMain = () => {
-    navigate('/');
+    navigate(location ? location.state.from.pathname : '/');
   };
 
   return (
     <div className='w-full h-full bg-extraLightGray pt-9 px-6 pb-18 md:px-28 md:pt-14 md:pb-56 xl:px-0 lg:flex lg:justify-center'>
       <div id='wrapper' className='w-full xl:w-2/5'>
-        <Link to={'/'} className='flex gap-x-4 items-center'>
+        <Link
+          to={location ? location.state.from.pathname : '/'}
+          className='flex gap-x-4 items-center'
+        >
           <ArrowLeft color='#4661E6' />
           <span className='jost-b-h4 text-gray'>Go Back</span>
         </Link>

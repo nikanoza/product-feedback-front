@@ -8,7 +8,7 @@ const Header = () => {
       <div>
         <Link to={'/'} className='flex gap-x-3 items-center'>
           <ArrowLeft color='#CDD2EE' />
-          <span className='jost-b-h4 text-white'>Go Back</span>
+          <span className='jost-b-h4 text-white hover:underline'>Go Back</span>
         </Link>
         <span className='text-white jost-b-h3 md:jost-b-h1'>Roadmap</span>
       </div>
