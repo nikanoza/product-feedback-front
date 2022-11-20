@@ -7,3 +7,4 @@ export { default as ArrowLeft } from './ArrowLeft';
 export { default as Plus } from './Plus';
 export { default as NewIcon } from './NewIcon';
 export { default as Edit } from './Edit';
+export { default as Sherlock } from './Sherlock';

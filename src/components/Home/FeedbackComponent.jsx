@@ -16,7 +16,7 @@ const FeedbackComponent = (props) => {
   const voteBox = (
     <div
       id='vote-box'
-      className='bg-lightGray flex py-2 px-4 rounded-cardBorderRadius items-center gap-x-2 md:flex-col md:gap-y-2 md:px-2 md:py-3 md:mr-10'
+      className='bg-lightGray hover:bg-boxGray flex py-2 px-4 rounded-cardBorderRadius items-center gap-x-2 md:flex-col md:gap-y-2 md:px-2 md:py-3 md:mr-10'
     >
       <ArrowUp />
       <span className='text-darkBlueTwo jost-b-h4'>
@@ -42,7 +42,7 @@ const FeedbackComponent = (props) => {
     <div className='p-6 bg-white rounded-cardBorderRadius md:flex'>
       <div className='hidden md:block'>{voteBox}</div>
       <div id='info-box' className=''>
-        <span className='text-darkBlueTwo jost-b-h4 md:jost-b-h3'>
+        <span className='text-darkBlueTwo hover:text-electric jost-b-h4 md:jost-b-h3'>
           {props.feedback.title}
         </span>
         <p className='text-gray jost-r-h3 md:jost-r-h2'>

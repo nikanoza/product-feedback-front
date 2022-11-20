@@ -35,7 +35,10 @@ const Header = (props) => {
         )}
       </div>
       <div className='hidden md:flex'>
-        <ButtonsControl />
+        <ButtonsControl
+          setByCategory={props.setByCategory}
+          byCategory={props.byCategory}
+        />
       </div>
       <div className='hidden md:flex'>
         <RoadmapPanel />
@@ -46,7 +49,10 @@ const Header = (props) => {
           ref={backdropRef}
           onClick={checkHandler}
         >
-          <Menu />
+          <Menu
+            setByCategory={props.setByCategory}
+            byCategory={props.byCategory}
+          />
         </div>
       )}
     </header>
